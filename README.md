@@ -13,7 +13,8 @@ Install dependencies with command lines below.
 ```
 sudo apt update
 sudo apt install libusb-dev
-sudo apt install ros-noetic-octomap* 
+sudo apt install ros-noetic-octomap*
+```
 
 Clone the repository.
 ```
