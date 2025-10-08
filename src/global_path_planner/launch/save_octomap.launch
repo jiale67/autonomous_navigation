@@ -1,0 +1,21 @@
+<launch>
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+    <param name="frame_id" type="string" value="map" />
+    <param name="resolution" value="0.1" />
+    <param name="latch" value="false" />
+    <param name="save_directory" value="$(env HOME)/maps" />
+    <remap from="cloud_in" to="/dynamic_map/inflated_voxel_map" />
+    <!-- <remap from="octomap_point_cloud_centers" to="/octomap/maze" /> -->
+
+    <param name="height_map" value="false" />
+    <param name="colored_map" value="false" />
+    <param name="filter_ground" value="true" />
+    <param name="ground_filter/distance" value="0.04" />
+    <param name="ground_filter/angle" value="0.15" />
+    <param name="ground_filter/plane_distance" value="0.07" />
+  </node>
+</launch>
+
+	<!-- map_saver
+		rosrun octomap_server octomap_saver -f /home/rjl/tare_ws/src/autonomous_exploration_development_environment/src/global_path_planner/octo_maps/xxx.bt
+	-->

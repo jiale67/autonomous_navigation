@@ -1,0 +1,13 @@
+<launch>
+	<rosparam>/use_sim_time: 0</rosparam>
+
+	<!-- planner -->
+	<rosparam file="$(find global_path_planner)/cfg/rrt_planner.yaml" />
+	<node pkg="global_path_planner" type="rrt_interactive_node" name="rrt_interactive_node" output="screen" />
+
+	<!-- map -->
+	<arg name="map_location" default="$(find global_path_planner)/octo_maps/maze.bt"/>
+	<node pkg="octomap_server" type="octomap_server_node" name="octomap_server_node" args="$(arg map_location)" output="log" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find global_path_planner)/rviz/rrt_interactive.rviz"/>
+
+</launch>
