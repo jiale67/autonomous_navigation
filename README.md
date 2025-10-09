@@ -3,6 +3,7 @@ A navigation algorithm based on CMU team's open-source local planner
 <img src="img/header.jpg" alt="Header" width="100%"/>
 
 This repository is developed based on the autonomius_deploration_development_denvironment repository, using a constructed octree map and RRT * algorithm to add global guidance to the local path planner for ground autonomous navigation and exploration. It has achieved good results in simulated maze, corridor, and cylindrical obstacle environments.
+
 Video Tutorial:  [BiliBili](https://www.bilibili.com/video/BV1rexCzuECi?t=1.2) (for China mainland)
 ## Usage
 
