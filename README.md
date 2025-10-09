@@ -4,7 +4,7 @@ A navigation algorithm based on CMU team's open-source local planner
 
 This repository is developed based on the autonomius_deploration_development_denvironment repository, using a constructed octree map and RRT * algorithm to add global guidance to the local path planner for ground autonomous navigation and exploration. Obtained good results in simulated maze and cylindrical obstacle environments.
 
-
+Video Tutorial:  [BiliBili](https://www.bilibili.com/video/BV1rexCzuECi?t=1.2) (for China mainland)
 ## Usage
 
 The repository has been tested in Ubuntu 20.04 with ROS Noetic. Follow instructions in [Autonomous Exploration Development Environment](http://cmu-exploration.com) to setup the development environment. 
