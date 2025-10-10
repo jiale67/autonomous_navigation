@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 project(terrain_analysis)
 
 set(CMAKE_BUILD_TYPE Release)
