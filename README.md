@@ -33,3 +33,28 @@ source ./devel/setup.bash
 roslaunch vehicle_simulator local_navigation.launch 
 ```
 Now you can use 2D Nav Goal to send waypoint driven robots in rviz
+
+通过dockerfile构建一个叫做ros_noetic_automous的镜像
+sudo docker build -t ros_noetic_automous:latest .
+
+将工作空间挂载到编译的镜像下面 将automous_navigation换成自己的工作空间的名字
+sudo docker run --rm -it \
+  --name ros_noetic_dev \
+  --env="DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="$HOME/automous_navigation:/catkin_ws" \
+  --network host \
+  --privileged \
+  ros_noetic_automous:latest \
+  /bin/bash
+
+在容器内编译
+cd /catkin_ws
+catkin config --init
+catkin build
+
+
+运行前
+xhost +local:
+允许docker访问宿主机的X11图形显示
